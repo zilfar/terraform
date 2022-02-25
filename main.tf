@@ -254,6 +254,7 @@ resource "aws_autoscaling_group" "asg" {
   desired_capacity          = 2
   launch_configuration      = aws_launch_configuration.launchconf.name
   vpc_zone_identifier       = [aws_subnet.create_public_subnet.id]
+  force_delete = true
   tag {
     key                 = "Name"
     value               = "zilamo_terraform_asg"
